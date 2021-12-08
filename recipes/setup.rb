@@ -58,6 +58,7 @@ end
 # Ruby and bundler
 if node['platform_family'] == 'debian'
   node.default['ruby-ng']['ruby_version'] = node['ruby-version']
+Chef::Log.info "mct ruby-ng in OR setup, including recipe: #{node['ruby-ng']}"
   include_recipe 'ruby-ng::dev'
 else
   ruby_pkg_version = node['ruby-version'].split('.')[0..1]
