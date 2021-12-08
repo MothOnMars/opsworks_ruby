@@ -9,6 +9,11 @@ include_recipe 'apt'
 
 prepare_recipe
 
+Chef::Log.info "mct family: #{node['platform_family']}"
+Chef::Log.info "mct ruby-ng in OR setup: #{node['ruby-ng']}"
+Chef::Log.info "mct ruby-version in OR setup: #{node['ruby-version']}"
+
+
 # Create deployer user
 group node['deployer']['group'] do
   gid 5000
